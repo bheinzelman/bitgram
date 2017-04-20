@@ -1,0 +1,14 @@
+{
+  "name": "bitgram",
+  "version": "0.0.0",
+  "description": "A simple block drawing app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bert Heinzelman",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

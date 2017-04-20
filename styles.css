@@ -1,0 +1,12 @@
+.container {
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+#canvas {
+	margin: 0 auto;
+	border: 1px solid black;
+}
+button {
+	margin: 0 auto;
+}
