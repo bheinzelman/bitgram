@@ -10,9 +10,18 @@ $(document).ready(function() {
 	});
 	$("#erase").click(function() {
 		// set draw color to white
-		bg.setColor("#ffffff");
+		bg.setEraseMode();
 	});
 	$("#draw").click(function() {
-		bg.setColor("#000000");
+		bg.setDrawMode();
 	});	
+	$("#color-submit").click(function() {
+		var color = parseInt($("#color-input").val()).toString(16);
+		while (color.length < 2) {
+			color = "0" + color;
+		}
+		color = "#" + color;
+		console.log(color);
+		bg.setColor(color);
+	});
 });
