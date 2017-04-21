@@ -1,4 +1,7 @@
-body, body.touch {
+html.touch {
+	overflow: hidden;
+}
+body {
 	overflow: hidden;
 }
 .container {
