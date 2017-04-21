@@ -89,6 +89,9 @@ bitgram.prototype.sizeCanvas = function() {
 	this.canvasWidth = $(this.canvas).width();
 	this.canvasHeight = $(this.canvas).height();
 
+	this.canvasWidth -= this.canvasWidth % 32;
+	this.canvasHeight -= this.canvasHeight % 32;
+
 	this.pixelWidth = this.canvasWidth/32;
 	this.pixelHeight = this.canvasHeight/32;
 }
@@ -119,8 +122,8 @@ bitgram.prototype.draw = function(event) {
  * Takes x coord and y coord
  */
 bitgram.prototype.drawPixel = function(xCoord, yCoord) {
-	var x = xCoord * this.pixelWidth;
-	var y = yCoord * this.pixelHeight;
+	var x = parseInt(xCoord * this.pixelWidth);
+	var y = parseInt(yCoord * this.pixelHeight);
 
 	this.ctx.beginPath();
 	this.ctx.fillRect(x, y, this.pixelWidth, this.pixelHeight);
