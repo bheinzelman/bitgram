@@ -7,21 +7,16 @@ function bitgram() {
 	this.pixelWidth = null;
 	this.pixelHeight = null;
 	this.eraserMode = false;
-
-	this.pixels = [];
-	for (var i = 0; i < 32; i++) {
-		var row = [];
-		for (var j = 0; j < 32; j++) {
-			row.push("#ffffff");
-		}
-		this.pixels.push(row);
-	}
+	this.pixels = null;
 }
 
 bitgram.prototype.init = function() {
-	this.canvas = document.getElementById("canvas");
+	this.canvas = $("#canvas").get(0);
+
 	this.ctx = this.canvas.getContext('2d');
+
 	this.sizeCanvas();
+	this.clearPixels();
 	this.drawGrid();
 
 	//
@@ -102,6 +97,7 @@ bitgram.prototype.sizeCanvas = function() {
 
 bitgram.prototype.clear = function() {
 	this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
+	this.clearPixels();
 	this.drawGrid();
 }
 
@@ -170,4 +166,15 @@ bitgram.prototype.setEraseMode = function() {
 
 bitgram.prototype.setDrawMode = function() {
 	this.eraserMode = false;
+}
+
+bitgram.prototype.clearPixels = function() {
+	this.pixels = [];
+	for (var i = 0; i < 32; i++) {
+		var row = [];
+		for (var j = 0; j < 32; j++) {
+			row.push("#ffffff");
+		}
+		this.pixels.push(row);
+	}
 }

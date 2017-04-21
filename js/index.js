@@ -15,13 +15,13 @@ $(document).ready(function() {
 	$("#draw").click(function() {
 		bg.setDrawMode();
 	});	
-	$("#color-submit").click(function() {
-		var color = parseInt($("#color-input").val()).toString(16);
-		while (color.length < 2) {
-			color = "0" + color;
-		}
-		color = "#" + color;
-		console.log(color);
-		bg.setColor(color);
-	});
+	// $("#color-submit").click(function() {
+	// 	var color = parseInt($("#color-input").val()).toString(16);
+	// 	while (color.length < 2) {
+	// 		color = "0" + color;
+	// 	}
+	// 	color = "#" + color;
+	// 	console.log(color);
+	// 	bg.setColor(color);
+	// });
 });
